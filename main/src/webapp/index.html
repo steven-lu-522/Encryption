@@ -1,0 +1,251 @@
+<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.1.0/jquery.min.js"></script>
+<script type="text/javascript">
+$(document).ready(function() {
+    $('a').click(function(){
+    $('html, body').animate({
+        scrollTop: $( $(this).attr('href') ).offset().top
+    }, 1000);
+    return false;
+
+  });
+      var str = "";
+      while (str.length < 30) {
+        if (Math.random() < .5) {
+          str = str + "0";
+        } else {
+          str = str + "1";
+        }
+      }
+      for (i = 0; i < 7; i++) {
+        str = str + str;
+      }
+      $('#binary').text(str);
+    window.setInterval(function(){
+  /// call your function here
+    str = str.substring(1);
+    if (Math.random() < .5) {
+      str = str + "0";
+    } else {
+      str = str + "1";
+    }
+    $('#binary').text(str);
+},1000);
+  window.setInterval(function(){
+  /// call your function here
+    var g = 45 + Math.floor(Math.random() * 17);
+    var b = Math.floor(Math.random() * 15);
+    $('#binary').css("color", 'rgb(0,' + g + "," + b + ");");
+},2500);
+  });
+</script>
+<style>
+  html{
+    height: 100%;
+    width: 100%;
+  }
+  body {
+    height: 100%;
+    width: 100%;
+    overflow-y: hidden;
+  }
+  #web-page {
+    height: 200%;
+    width: 100%;
+  }
+  #main-menu {
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    z-index: 0;
+    background-color: black;
+  }
+  #menu-background {
+    position: absolute;
+    z-index: -3;
+    color: rgb(0,52,5);
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+
+  }
+  #binary {
+    font-size: 30px;
+    word-wrap: break-word;
+  }
+  #title {
+    color: white;
+    top: 50%;
+    left: 50%;
+    margin-top: -100px;
+    margin-left: -335px;
+    text-shadow:
+    -4px -4px 0 rgb(0,120,28),
+    4px -4px 0 rgb(0,120,28),
+    -4px 4px 0 rgb(0,120,28),
+    4px 4px 0 rgb(0,120,28);
+    font-size: 150px;
+    z-index: 0;
+    position: absolute;
+  }
+  #cover {
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    z-index: 2;
+  }
+  #start {
+    position: absolute;
+    top: 70%;
+    left: 50%;
+    margin-top: -50px;
+    margin-left: -100px;
+    color: #111;
+    text-shadow:
+    -2px -2px 0 rgb(0,190,50),
+    2px -2px 0 rgb(0,190,50),
+    -2px 2px 0 rgb(0,190,50),
+    2px 2px 0 rgb(0,190,50);
+    text-decoration: none;
+  }
+  #start:hover {
+    color: #000;
+    text-shadow:
+    -2px -2px 0 rgb(0,255,80),
+    2px -2px 0 rgb(0,255,80),
+    -2px 2px 0 rgb(0,255,80),
+    2px 2px 0 rgb(0,255,80);
+  }
+  #encrypt {
+    top: 100%;
+    height: 100%;
+    background-color: rgb(156,156,156);
+    position: absolute;
+    z-index: 3;
+    width: 100%;
+  }
+  .title {
+    font-size: 50px;
+    color: black;
+    width: 90%;
+    font-weight: bold;
+    margin-left: 5%;
+  }
+  .input-field {
+    margin-left: 5%;
+    margin-top: 30px;
+    border: 1px solid #aaa;
+    width: 90%;
+    height: 70px;
+    border-radius: 5px;
+  }
+  .input-field-title {
+    font-size: 24px;
+    margin-left: 0.5%;
+    float: left;
+
+    width: 100%;
+  }
+  #text-field {
+    width: 85%;
+    margin-left: 0.5%;
+    height: 30px;
+    font-size: 24px;
+    border-radius: 5px;
+    float: left;
+  }
+  .java-call {
+    text-decoration: none;
+    color: white;
+  }
+  .java-call:hover {
+    text-decoration: none;
+  }
+  .java-call-button {
+    margin-top: -5px;
+    border-radius: 5px;
+    color: white;
+    border: 2px solid #000;
+    background-color: rgb(156,156,156);
+    height: 35px;
+    margin-right: 20px;
+    font-size: 20px;
+    padding: 3px;
+    text-decoration: none;
+    float: right;
+  }
+  .download-button {
+    background-color: rgb(0,160,200);
+    margin-top: 30px;
+    width: 90%;
+    min-width: 280px;
+    height: 50px;
+    margin-left: 5%;
+    border-radius: 15px;
+    text-decoration: none;
+    border: 2px solid #777;
+  }
+  .download-button:hover {
+    background-color: rgb(0,190,225);
+  }
+  .button-title {
+    font-size: 24px;
+    text-align: center;
+    width: 95%;
+    color: white;
+    margin-left: 2.5%;
+    margin-top: 10px;
+  }
+  input[type="file"] {
+    display: none;
+  }
+  #file-upload {
+    margin-left: 0.5%;
+    background-color: white;
+    float: left;
+  }
+</style>
+<body>
+  <div id="web-page">
+    <div id="main-menu">
+      <div id="menu-background">
+        <text id="binary">Scrolling Numbers</text>
+      </div>
+      <h1 id="title"> Encryption</h1>
+      <div id="cover">
+        <a href="#encrypt" id="start"><h1 style="font-size: 100px;">Start</h1></a>
+      </div>
+    </div>
+    <br>
+    <div id="encrypt">
+      <h1 class="title">Encryption:</h1>
+      <div class="input-field" style="background-color: rgb(255,75,75);">
+        <text class="input-field-title"> <strong>Text Entry: </strong></text>
+        <input type="text" id="text-field" placeholder="Enter a number you want to encrypt here.">
+        <div class="java-call-button"><a href="#" class="java-call">Encrypt!</a>
+          </div>
+      </div>
+      <a href="Encrypted_file" target="_blank" style="text-decoration: none;">
+        <div class="download-button">
+          <h1 class="button-title"> <strong>Click here to download the encrypted file!</strong></h1>
+        </div>
+      </a>
+      <h1 class="title">Decryption:</h1>
+      <div class="input-field" style="background-color: rgb(255,221,0);" id="file-entry">
+        <div class="input-field-title">
+          <strong>File Entry: </strong></div>
+        <label id="file-upload">
+          <input type="file"/>Choose file to decrypt</label>
+        <div class="java-call-button"><a href="#" class="java-call">Decrypt!</a>
+        </div>
+      </div>
+      <div class="download-button">
+        <a href="Decrypted_file" target="_blank" style="text-decoration: none;">
+          <h1 class="button-title"> <strong>Click here to download the decrypted file!</strong></h1>
+      </div>
+        </a>
+      <div>
+    </div>
+      <a href="#" class="java-call"><div class="input-field" style="background-color: rgb(0,168,6);">
+        <h1 style="margin-left: 20%; margin-top: 12px; width: 60%; text-align: center;">Reset your encryption key! </h1>
+        </div></a>
+</body>

@@ -149,7 +149,7 @@ $(document).ready(function() {
 
     width: 99.5%;
   }
-  #text-field {
+  .text-field {
     width: 85%;
     margin-left: 0.5%;
     height: 30px;
@@ -177,16 +177,14 @@ $(document).ready(function() {
     text-decoration: none;
     float: right;
   }
-  .download-button {
+  .result {
     background-color: rgb(0,160,200);
-    margin-top: 30px;
-    width: 90%;
-    min-width: 280px;
-    height: 50px;
     margin-left: 5%;
-    border-radius: 15px;
-    text-decoration: none;
-    border: 2px solid #777;
+    margin-top: 30px;
+    border: 2px solid #000;
+    width: 90%;
+    height: 50px;
+    border-radius: 5px;
   }
   .download-button:hover {
     background-color: rgb(0,190,225);
@@ -224,29 +222,25 @@ $(document).ready(function() {
       <h1 class="title">Encryption:</h1>
       <div class="input-field" style="background-color: rgb(255,75,75);">
         <text class="input-field-title"> <strong>Text Entry: </strong></text>
-        <input type="text" id="text-field" placeholder="Enter a number you want to encrypt here.">
+        <input type="text" class="text-field" placeholder="Enter a number you want to encrypt here.">
         <div class="java-call-button"><a href="#" class="java-call">Encrypt!</a>
           </div>
       </div>
-      <a href="Encrypted_file" target="_blank" style="text-decoration: none;">
-        <div class="download-button">
-          <h1 class="button-title"> <strong>Click here to download the encrypted file!</strong></h1>
-        </div>
-      </a>
+      <div class="result">
+        <h1 class="button-title"> <strong>Encrypted number and key will be printed here.</strong></h1>
+      </div>
       <h1 class="title">Decryption:</h1>
       <div class="input-field" style="background-color: rgb(255,221,0);" id="file-entry">
         <div class="input-field-title">
           <strong>File Entry: </strong></div>
-        <label id="file-upload">
-          <input type="file"/>Choose file to decrypt</label>
+          <input type="text" class="text-field" placeholder="Enter a number you want to encrypt here." style="width: 42.5">
+          <input type="text" class="tet-field" placeholder="Enter encryption key here." style="width: 42.5%">
         <div class="java-call-button"><a href="#" class="java-call">Decrypt!</a>
         </div>
       </div>
-      <div class="download-button">
-        <a href="Decrypted_file" target="_blank" style="text-decoration: none;">
-          <h1 class="button-title"> <strong>Click here to download the decrypted file!</strong></h1>
+      <div class="result">
+          <h1 class="button-title"> <strong>Decrypted number will be printed here.</strong></h1>
       </div>
-        </a>
       <div>
     </div>
       <a href="#" class="java-call"><div class="input-field" style="background-color: rgb(0,168,6);">
